@@ -22,9 +22,6 @@
 
 ;;; Code:
 
-(when *is-a-mac*
-  (maybe-require-package 'grab-mac-link))
-
 (maybe-require-package 'org-cliplink)
 (maybe-require-package 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -35,7 +32,7 @@
 (defvar sanityinc/org-global-prefix-map (make-sparse-keymap)
   "A keymap for handy global access to org helpers, particularly clocking.")
 
-(define-key sanityinc/org-global-prefix-map (kbd "j") 'org-clock-goto)
+(define-key sanityinc/org-global-prefix-map (kbd "j") 'org-clock-jump-to-current-clock)
 (define-key sanityinc/org-global-prefix-map (kbd "l") 'org-clock-in-last)
 (define-key sanityinc/org-global-prefix-map (kbd "i") 'org-clock-in)
 (define-key sanityinc/org-global-prefix-map (kbd "o") 'org-clock-out)
@@ -304,16 +301,6 @@ typical word processor."
 
 
 
-(when (and *is-a-mac* (file-directory-p "/Applications/org-clock-statusbar.app"))
-  (add-hook 'org-clock-in-hook
-            (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e"
-                                     (concat "tell application \"org-clock-statusbar\" to clock in \"" org-clock-current-task "\""))))
-  (add-hook 'org-clock-out-hook
-            (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e"
-                                     "tell application \"org-clock-statusbar\" to clock out"))))
-
-
-
 ;; TODO: warn about inconsistent items, e.g. TODO inside non-PROJECT
 ;; TODO: nested projects!
 
@@ -356,10 +343,7 @@ typical word processor."
 
 
 (with-eval-after-load 'org
-  (define-key org-mode-map (kbd "C-M-<up>") 'org-up-element)
-  (when *is-a-mac*
-    (define-key org-mode-map (kbd "M-h") nil)
-    (define-key org-mode-map (kbd "C-c g") 'grab-mac-link)))
+  (define-key org-mode-map (kbd "C-M-<up>") 'org-up-element))
 
 (with-eval-after-load 'org
   (org-babel-do-load-languages
