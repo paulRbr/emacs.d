@@ -375,12 +375,13 @@ typical word processor."
       (ledger . t)
       (ocaml . nil)
       (octave . t)
+      (org . t)
       (plantuml . t)
       (python . t)
       (ruby . t)
       (screen . nil)
-      (sh . t) ;; obsolete
-      (shell . t)
+      (,(if (locate-library "ob-sh") 'sh 'shell) . t)
+      ;; (shell . t)
       (sql . t)
       (sqlite . t)))))
 
