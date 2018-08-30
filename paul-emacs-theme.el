@@ -1,0 +1,13 @@
+(deftheme paul-emacs
+  "Created 2018-01-27.")
+
+(custom-theme-set-variables
+ 'paul-emacs
+ '(ansi-color-faces-vector [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector ["#657b83" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#fdf6e3"])
+ '(package-selected-packages (quote (ansible ansible-doc company-ansible simpleclip helm-projectile fiplr inf-ruby nginx-mode yari yaml-mode yagist whole-line-or-region whitespace-cleanup-mode wgrep vcl-mode vc-darcs unfill undo-tree tidy textile-mode terraform-mode tagedit switch-window sr-speedbar sql-indent smex smarty-mode skewer-less session scss-mode scratch sass-mode ruby-hash-syntax rubocop robe rinari regex-tool redshank rainbow-mode rainbow-delimiters puppet-mode projectile project-local-variables pip-requirements php-mode paredit-everywhere page-break-lines org-pomodoro org-fstree mwe-log-commands mustache-mode multiple-cursors move-dup mmm-mode marmalade markdown-mode magit-svn magit-gh-pulls macrostep lua-mode lively less-css-mode ledger-mode json-mode js-comint jinja2-mode ipretty idomenu ido-ubiquitous ibuffer-vc htmlize hl-sexp hippie-expand-slime highlight-symbol highlight-quoted highlight-escape-sequences hi2 hayoo guide-key grizzl go-mode gnuplot gitignore-mode github-clone github-browse-file gitconfig-mode git-timemachine git-messenger git-blame ghci-completion fullframe frame-restore flycheck-package flycheck-ledger flycheck-hdevtools flycheck-haskell flycheck-clojure flx-ido fill-column-indicator f expand-region exec-path-from-shell erlang elisp-slime-nav elein eldoc-eval egg dsvn dockerfile-mode dired-sort dired+ diminish diff-hl default-text-scale darcsum csv-nav csv-mode css-eldoc crontab-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized coffee-mode cljsbuild-mode cl-lib-highlight bug-reference-github browse-kill-ring auto-compile anzu alchemist aggressive-indent ace-jump-mode ac-slime ac-js2 ac-inf-ruby ac-haskell-process ac-cider)))
+ '(send-mail-function (quote smtpmail-send-it))
+ '(session-use-package t)
+ '(custom-safe-themes (quote ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" default))))
+
+(provide-theme 'paul-emacs)
