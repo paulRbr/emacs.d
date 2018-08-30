@@ -372,6 +372,7 @@ typical word processor."
      (ledger . t)
      (ocaml . nil)
      (octave . t)
+     (org . t)
      (plantuml . t)
      (python . t)
      (ruby . t)
