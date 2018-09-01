@@ -380,8 +380,8 @@ typical word processor."
      (python . t)
      (ruby . t)
      (screen . nil)
-     (,(if (locate-library "ob-sh") 'sh 'shell) . t)
-     (shell . t)
+     ;;(,(if (locate-library "ob-sh") 'sh 'shell) . t)
+     ;;p(shell . t)
      (sql . nil)
      (sqlite . t))))
 
