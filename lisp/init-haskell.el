@@ -84,6 +84,8 @@
   (add-hook 'dhall-mode-hook 'stack-exec-path-mode))
 
 
+;; Various preferences
+(setq haskell-stylish-on-save t)
 
 
 (provide 'init-haskell)
