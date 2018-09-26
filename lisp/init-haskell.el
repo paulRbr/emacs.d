@@ -42,6 +42,8 @@
 (maybe-require-package 'dhall-mode)
 
 
+;; Various preferences
+(setq haskell-stylish-on-save t)
 
 
 (provide 'init-haskell)
