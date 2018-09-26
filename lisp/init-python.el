@@ -8,6 +8,7 @@
               auto-mode-alist))
 
 (require-package 'pip-requirements)
+(maybe-require-package 'jinja2-mode)
 
 (when (maybe-require-package 'anaconda-mode)
   (after-load 'python
