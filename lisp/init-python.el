@@ -15,6 +15,7 @@
 (setq python-shell-interpreter "python3")
 
 (require-package 'pip-requirements)
+(maybe-require-package 'jinja2-mode)
 
 (when (maybe-require-package 'flymake-ruff)
   (defun sanityinc/flymake-ruff-maybe-enable ()
