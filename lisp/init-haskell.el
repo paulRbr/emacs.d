@@ -31,8 +31,14 @@
 
   (with-eval-after-load 'haskell-mode
     (define-key haskell-mode-map (kbd "C-c h") 'hoogle)
-    (define-key haskell-mode-map (kbd "C-o") 'open-line))
+    (define-key haskell-mode-map (kbd "C-o") 'open-line)
+    (if (executable-find "hlint")
+        (defun hlint-on-save ()
+          "Launch hlint on haskell-mode files."
+          (when (eq major-mode 'haskell-mode)
+            (shell-command-to-string (format "hlint %s" buffer-file-name))))
 
+      (add-hook 'after-save-hook #'hlint-on-save)))
 
   (with-eval-after-load 'page-break-lines
     (add-to-list 'page-break-lines-modes 'haskell-mode)))
