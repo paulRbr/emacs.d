@@ -12,7 +12,8 @@
   (require-package 'helm-dash))
 
 (when (package-installed-p 'helm-dash)
-  (global-set-key (kbd "C-c D") 'helm-dash-at-point))
+  (global-set-key (kbd "C-c D") 'helm-dash-at-point)
+  (setq helm-dash-browser-func 'eww))
 
 (provide 'init-dash)
 ;;; init-dash.el ends here
