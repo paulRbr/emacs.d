@@ -191,6 +191,5 @@
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;(put 'scroll-left 'disabled nil)
 ;;; init.el ends here
 (put 'scroll-left 'disabled nil)
