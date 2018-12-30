@@ -49,6 +49,7 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
+(require-package 'wgrep)
 (require-package 'diminish)
 (require-package 'scratch)
 (require-package 'command-log-mode)
@@ -184,5 +185,4 @@
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;(put 'scroll-left 'disabled nil)
 ;;; init.el ends here

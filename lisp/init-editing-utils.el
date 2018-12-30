@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+;; -*- lexical-binding: t -*-
 (require-package 'unfill)
 
 (when (fboundp 'electric-pair-mode)
@@ -87,8 +88,8 @@
 
 
 
-(when (fboundp 'display-line-numbers-mode)
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode))
+(unless (fboundp 'display-line-numbers-mode)
+  (require-package 'nlinum))
 
 
 (when (require-package 'rainbow-delimiters)
