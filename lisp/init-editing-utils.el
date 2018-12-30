@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+;; -*- lexical-binding: t -*-
 (require-package 'unfill)
 
 (when (fboundp 'electric-pair-mode)
