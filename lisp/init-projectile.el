@@ -11,8 +11,13 @@
   (after-load 'projectile
     (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
-  (maybe-require-package 'ibuffer-projectile))
+  (maybe-require-package 'ibuffer-projectile)
 
+  ;; Enable perspective mode with persp-projectile minor mode
+  (when (maybe-require-package 'persp-projectile)
+    (require 'perspective)
+    (persp-mode)
+    (require 'persp-projectile)))
 
 (provide 'init-projectile)
 ;;; init-projectile.el ends here
