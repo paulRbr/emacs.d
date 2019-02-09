@@ -50,7 +50,8 @@
 (when (maybe-require-package 'git-commit)
   (add-hook 'git-commit-mode-hook 'goto-address-mode))
 
-
+(maybe-require-package 'gitlab-ci-mode)
+
 (when *is-a-mac*
   (after-load 'magit
     (add-hook 'magit-mode-hook (lambda () (local-unset-key [(meta h)])))))
