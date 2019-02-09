@@ -42,7 +42,18 @@
 
 (maybe-require-package 'magit-todos)
 
-(add-hook 'git-commit-mode-hook 'goto-address-mode)
+(require-package 'fullframe)
+(with-eval-after-load 'magit
+  (fullframe magit-status magit-mode-quit-window))
+
+(when (maybe-require-package 'git-commit)
+  (add-hook 'git-commit-mode-hook 'goto-address-mode))
+
+(maybe-require-package 'gitlab-ci-mode)
+
+(when *is-a-mac*
+  (with-eval-after-load 'magit
+    (add-hook 'magit-mode-hook (lambda () (local-unset-key [(meta h)])))))
 
 
 ;; Convenient binding for vc-git-grep
