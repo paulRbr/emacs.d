@@ -17,6 +17,7 @@
   (add-to-list 'forge-alist '("framagit.org" "framagit.org/api/v4" "framagit.org" forge-gitlab-repository))
   (add-to-list 'forge-alist '("gitlab-perso.com" "gitlab-perso.com/api/v4" "gitlab-perso.com" forge-gitlab-repository))
   (add-to-list 'forge-alist '("github-perso.com" "api.github-perso.com" "github-perso.com" forge-github-repository)))
+(maybe-require-package 'github-review)
 
 (provide 'init-github)
 ;;; init-github.el ends here
