@@ -16,6 +16,7 @@
 
   (add-to-list 'forge-alist '("gitlab-perso.com" "gitlab-perso.com/api/v4" "gitlab-perso.com" forge-gitlab-repository))
   (add-to-list 'forge-alist '("github-perso.com" "api.github-perso.com" "github-perso.com" forge-github-repository)))
+(maybe-require-package 'github-review)
 
 (when (maybe-require-package 'flymake-actionlint)
   (add-hook 'yaml-mode-hook 'flymake-actionlint-action-load-when-actions-file))
