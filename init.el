@@ -201,3 +201,4 @@
 ;; End:
 ;;(put 'scroll-left 'disabled nil)
 ;;; init.el ends here
+(put 'scroll-left 'disabled nil)
