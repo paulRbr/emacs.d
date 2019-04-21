@@ -100,6 +100,8 @@ Call a second time to restore the original window configuration."
 
 (global-set-key (kbd "C-c <down>") 'sanityinc/toggle-current-window-dedication)
 
+(maybe-require-package 'writeroom-mode)
+(define-key global-map (kbd "C-x w") 'writeroom-mode)
 
 
 
