@@ -116,6 +116,11 @@ This command currently blocks the UI, sorry."
   (with-eval-after-load 'dash-at-point
     (add-to-list 'dash-at-point-mode-alist '(sql-mode . "psql,mysql,sqlite,postgis"))))
 
+(defun my-sql-connect (product connection)
+  ;; remember to set the sql-product, otherwise, it will fail for the first time
+  ;; you call the function
+  (setq sql-product product)
+  (sql-connect connection))
 
 (with-eval-after-load 'page-break-lines
   (add-to-list 'page-break-lines-modes 'sql-mode))
