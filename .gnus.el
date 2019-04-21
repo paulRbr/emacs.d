@@ -87,8 +87,8 @@
 ;; Verify signed messages
 (setq mm-verify-option 'known
       mm-decrypt-option 'known
-      mm-sign-option 'guided
-      mm-encrypt-option 'guided
+      mm-sign-option nil ;; Auto select key for signing
+      mm-encrypt-option nil
       gnus-article-emulate-mime t)
 
 ;; Make gnus threading more stylish
