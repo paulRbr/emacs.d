@@ -192,3 +192,4 @@
 ;; no-byte-compile: t
 ;; End:
 ;;; init.el ends here
+(put 'scroll-left 'disabled nil)
