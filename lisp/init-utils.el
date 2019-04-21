@@ -110,5 +110,13 @@ BUFFER and ALIST are as for `display-buffer-full-frame'."
       (browse-url (concat "file://" file-name)))))
 
 
+;;----------------------------------------------------------------------------
+;; Fetch secrets from Pass directly
+;;----------------------------------------------------------------------------
+(defun pass (key)
+  (string-trim-right
+   (shell-command-to-string (concat "pass " key))))
+
+
 (provide 'init-utils)
 ;;; init-utils.el ends here
