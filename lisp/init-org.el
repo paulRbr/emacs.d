@@ -26,6 +26,8 @@
   (maybe-require-package 'grab-mac-link))
 
 (maybe-require-package 'org-cliplink)
+(maybe-require-package 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 (define-key global-map (kbd "C-c l") 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)
