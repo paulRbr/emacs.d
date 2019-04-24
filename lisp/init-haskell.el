@@ -36,13 +36,16 @@
         (defun hlint-on-save ()
           "Launch hlint on haskell-mode files."
           (when (eq major-mode 'haskell-mode)
-            (shell-command-to-string (format "hlint %s" buffer-file-name))))
+            (shell-command-to-string (format "hlint %s" buffer-file-name)))))
+    (if (executable-find "hlint")
+        (add-hook 'haskell-mode-hook
+                  (lambda ()
+                    (add-hook 'after-save-hook #'hlint-on-save'a-test-save-hoo nil 'make-it-local)))
 
       (add-hook 'after-save-hook #'hlint-on-save)))
 
   (with-eval-after-load 'page-break-lines
     (add-to-list 'page-break-lines-modes 'haskell-mode)))
-
 
 
 (maybe-require-package 'dhall-mode)
