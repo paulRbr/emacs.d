@@ -286,6 +286,16 @@ ORIG is the advised function, which is called with its ARGS."
 
 (advice-add 'kmacro-call-macro :around 'sanityinc/disable-features-during-macro-call)
 
+;;----------------------------------------------------------------------------
+;; Install xclip (copy to system clipboard)
+;;----------------------------------------------------------------------------
+(maybe-require-package 'xclip)
+
+;;----------------------------------------------------------------------------
+;; Install string-inflection (edit operations on strings (underscore -> UPCASE -> CamelCase)
+;;----------------------------------------------------------------------------
+(maybe-require-package 'string-inflection)
+
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
