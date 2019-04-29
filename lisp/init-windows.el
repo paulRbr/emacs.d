@@ -111,5 +111,18 @@ Call a second time to restore the original window configuration."
   (add-hook 'after-init-hook (apply-partially 'windswap-default-keybindings 'shift 'control)))
 
 
+
+(when (maybe-require-package 'dashboard)
+  (setq show-week-agenda-p t)
+  (dashboard-setup-startup-hook)
+  (setq dashboard-items '((recents  . 5)
+                          ;; (bookmarks . 5)
+                          (projects . 5)
+                          (agenda . 5)
+                          ;; (registers . 1)
+                          )))
+
+
+
 (provide 'init-windows)
 ;;; init-windows.el ends here
