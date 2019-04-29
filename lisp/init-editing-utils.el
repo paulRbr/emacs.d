@@ -291,5 +291,17 @@ ORIG is the advised function, which is called with its ARGS."
   (global-set-key (kbd "C-=") 'expreg-expand)
   (global-set-key (kbd "C--") 'expreg-contract))
 
+
+;;----------------------------------------------------------------------------
+;; Install xclip (copy to system clipboard)
+;;----------------------------------------------------------------------------
+(maybe-require-package 'xclip)
+
+
+;;----------------------------------------------------------------------------
+;; Install string-inflection (edit operations on strings (underscore -> UPCASE -> CamelCase)
+;;----------------------------------------------------------------------------
+(maybe-require-package 'string-inflection)
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
