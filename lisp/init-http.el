@@ -12,6 +12,7 @@
 
 
 (when (maybe-require-package 'restclient)
+  (require-package 'ob-restclient)
   (add-auto-mode 'restclient-mode "\\.rest\\'")
 
   (defun sanityinc/restclient ()
