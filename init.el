@@ -126,6 +126,7 @@
 (maybe-require-package 'just-mode)
 (maybe-require-package 'justl)
 
+(require 'init-gnus)
 (require 'init-paredit)
 (require 'init-lisp)
 (require 'init-sly)
