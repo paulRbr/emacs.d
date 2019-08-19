@@ -40,7 +40,6 @@
 
 ;; Extra export format (Slides in Reveal.js format)
 (maybe-require-package 'org-re-reveal)
-(require 'org-re-reveal)
 (maybe-require-package 'ox-reveal)
 
 ;; Extra babel languages
