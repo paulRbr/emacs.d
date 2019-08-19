@@ -40,11 +40,8 @@
     (if (executable-find "hlint")
         (add-hook 'haskell-mode-hook
                   (lambda ()
-                    (add-hook 'after-save-hook #'hlint-on-save'a-test-save-hoo nil 'make-it-local)))
-
-      (add-hook 'after-save-hook #'hlint-on-save)))
-
-  (with-eval-after-load 'page-break-lines
+                    (add-hook 'after-save-hook 'hlint-on-save)))))
+  (after-load 'page-break-lines
     (add-to-list 'page-break-lines-modes 'haskell-mode)))
 
 
