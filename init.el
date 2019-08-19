@@ -130,6 +130,7 @@
   (sanityinc/remove-auto-mode  'just-ts-mode))
 (maybe-require-package 'justl)
 
+(require 'init-gnus)
 (require 'init-paredit)
 (require 'init-lisp)
 (require 'init-sly)
