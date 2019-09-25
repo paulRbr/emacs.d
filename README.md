@@ -1,5 +1,13 @@
-[![Build Status](https://github.com/purcell/emacs.d/workflows/CI/badge.svg)](https://github.com/purcell/emacs.d/actions)
+[![Build Status](https://github.com/paulrbr/emacs.d/workflows/CI/badge.svg)](https://github.com/paulrbr/emacs.d/actions)
 <a href="https://www.patreon.com/sanityinc"><img alt="Support me" src="https://img.shields.io/badge/Support%20Me-%F0%9F%92%97-ff69b4.svg"></a>
+
+# Fork from Steve Purcell
+
+This is my (PaulRbR) personnal emacs configuration. It is mostly Steve Purcell's configuration with some of my personnal settings & tweaks.
+
+---
+
+**All the following is Steve Purcell's work**
 
 # A reasonable Emacs config
 
