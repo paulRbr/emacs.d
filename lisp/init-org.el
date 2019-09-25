@@ -40,7 +40,11 @@
 
 ;; Extra export format (Slides in Reveal.js format)
 (maybe-require-package 'org-re-reveal)
+(require 'org-re-reveal)
 (maybe-require-package 'ox-reveal)
+
+;; Extra babel languages
+(maybe-require-package 'ob-mongo)
 
 ;; Various preferences
 (setq org-log-done t
@@ -362,6 +366,7 @@ typical word processor."
       (haskell . nil)
       (latex . t)
       (ledger . t)
+      (mongo . t)
       (ocaml . nil)
       (octave . t)
       (org . t)
