@@ -41,6 +41,12 @@
         (add-hook 'haskell-mode-hook
                   (lambda ()
                     (add-hook 'after-save-hook 'hlint-on-save)))))
+
+  (when (maybe-require-package 'reformatter)
+    (reformatter-define hindent
+      :program "hindent"
+      :lighter " Hin"))
+
   (after-load 'page-break-lines
     (add-to-list 'page-break-lines-modes 'haskell-mode)))
 
