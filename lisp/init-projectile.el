@@ -16,10 +16,35 @@
 
   (maybe-require-package 'ibuffer-projectile)
 
-  ;; Enable perspective mode with persp-projectile minor mode
+  (when (maybe-require-package 'persp-mode)
+    (with-eval-after-load "persp-mode"
+      (setq wg-morph-on nil)
+      (setq persp-autokill-buffer-on-remove 'kill-weak)
+      ;; NOTE: Redefine `persp-add-new' to address.
+      ;; Issue: Unable to create/handle persp-mode
+      ;; https://github.com/Bad-ptr/persp-mode.el/issues/96
+      ;; https://github.com/Bad-ptr/persp-mode-projectile-bridge.el/issues/4
+      ;; https://emacs-china.org/t/topic/6416/7
+      (defun* persp-add-new (name &optional (phash *persp-hash*))
+        "Create a new perspective with the given `NAME'. Add it to `PHASH'.
+  Return the created perspective."
+        (interactive "sA name for the new perspective: ")
+        (if (and name (not (equal "" name)))
+            (destructuring-bind (e . p)
+                (persp-by-name-and-exists name phash)
+              (if e p
+                (setq p (if (equal persp-nil-name name)
+                            nil (make-persp :name name)))
+                (persp-add p phash)
+                (run-hook-with-args 'persp-created-functions p phash)
+                p))
+          (message "[persp-mode] Error: Can't create a perspective with empty name.")
+          nil))
+      (add-hook 'after-init-hook #'(lambda () (persp-mode 1))))
+
+    (require 'persp-mode))
+
   (when (maybe-require-package 'persp-projectile)
-    (require 'perspective)
-    (persp-mode)
     (require 'persp-projectile)))
 
 (provide 'init-projectile)
