@@ -51,7 +51,7 @@
   (if (executable-find "standardrb")
       (defun standardrb-on-save ()
         "Launch standardrb on ruby-mode files."
-        (when (eq major-mode 'ruby-mode)
+        (when (and (eq major-mode 'ruby-mode) (not (file-exists-p (concat (projectile-project-root (projectile-parent buffer-file-name)) ".nostandardrb"))))
           (shell-command-to-string (format "standardrb --fix %s" buffer-file-name)))))
   (if (executable-find "standardrb")
       (add-hook 'ruby-mode-hook
