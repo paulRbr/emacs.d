@@ -16,13 +16,14 @@
 
   (maybe-require-package 'ibuffer-projectile)
 
-  (when (maybe-require-package 'persp-projectile)
-    (persp-mode)
-    (require 'persp-projectile)
+  ;; (when (maybe-require-package 'persp-projectile)
+  ;;   ;; (persp-mode)
+  ;;   (require 'persp-projectile)
 
-    (define-key projectile-mode-map
-      (kbd "C-c p p")
-      'projectile-persp-switch-project)))
+  ;;   (define-key projectile-mode-map
+  ;;     (kbd "C-c p p")
+  ;;     'projectile-persp-switch-project))
+  )
 
 (provide 'init-projectile)
 ;;; init-projectile.el ends here
