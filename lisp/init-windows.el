@@ -113,12 +113,18 @@ Call a second time to restore the original window configuration."
 
 
 (when (maybe-require-package 'dashboard)
+  (when (maybe-require-package 'all-the-icons)
+    (when (maybe-require-package 'all-the-icons-dired)
+      (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+      )
+    )
   (setq show-week-agenda-p t)
+  (setq dashboard-set-footer nil) ;; I don't care about RMS and the Emacs Chruch
   (dashboard-setup-startup-hook)
-  (setq dashboard-items '((recents  . 5)
+  (setq dashboard-items '((projects . 10)
+                          (recents  . 5)
                           ;; (bookmarks . 5)
-                          (projects . 5)
-                          (agenda . 5)
+                          (agenda . 10)
                           ;; (registers . 1)
                           )))
 
