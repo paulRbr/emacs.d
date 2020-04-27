@@ -378,6 +378,11 @@ typical word processor."
       (sql . t)
       (sqlite . t)))))
 
+(after-load 'org
+  ;; (server-start)
+  ;; (add-to-list 'load-path "~/path/to/org/protocol/")
+  (require 'org-protocol)
+  )
 
 (provide 'init-org)
 ;;; init-org.el ends here
