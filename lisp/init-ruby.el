@@ -47,16 +47,16 @@
 
 (with-eval-after-load 'ruby-mode
   (define-key ruby-mode-map [S-f7] 'ruby-compilation-this-buffer)
-  (define-key ruby-mode-map [f7] 'ruby-compilation-this-test)
-  (if (executable-find "standardrb")
-      (defun standardrb-on-save ()
-        "Launch standardrb on ruby-mode files."
-        (when (and (eq major-mode 'ruby-mode) (not (file-exists-p (concat (projectile-project-root (projectile-parent buffer-file-name)) ".nostandardrb"))))
-          (shell-command-to-string (format "standardrb --fix %s" buffer-file-name)))))
-  (if (executable-find "standardrb")
-      (add-hook 'ruby-mode-hook
-                (lambda ()
-                  (add-hook 'after-save-hook #'standardrb-on-save nil 'make-it-local)))))
+  (define-key ruby-mode-map [f7] 'ruby-compilation-this-test))
+  ;; (if (executable-find "standardrb")
+  ;;     (defun standardrb-on-save ()
+  ;;       "Launch standardrb on ruby-mode files."
+  ;;       (when (and (eq major-mode 'ruby-mode) (not (file-exists-p (concat (projectile-project-root (projectile-parent buffer-file-name)) ".nostandardrb"))))
+  ;;         (shell-command-to-string (format "standardrb --fix %s" buffer-file-name)))))
+  ;; (if (executable-find "standardrb")
+  ;;     (add-hook 'ruby-mode-hook
+  ;;               (lambda ()
+  ;;                 (add-hook 'after-save-hook #'standardrb-on-save nil 'make-it-local)))))
 
 (with-eval-after-load 'ruby-compilation
   (defalias 'rake 'ruby-compilation-rake))
