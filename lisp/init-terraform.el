@@ -9,6 +9,8 @@
     (with-eval-after-load 'terraform-mode
       (company-terraform-init)
 
+      (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
+
       ;; I find formatters based on "reformatter" to be more reliable
       ;; so I redefine `terraform-format-on-save-mode' here.
       (when (maybe-require-package 'reformatter)
