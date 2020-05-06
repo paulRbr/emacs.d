@@ -15,7 +15,11 @@
       (kbd "<left-fringe> <mouse-1>")
       'diff-hl-diff-goto-hunk)))
 
-(maybe-require-package 'browse-at-remote)
+(when (maybe-require-package 'browse-at-remote)
+  (after-load 'browse-at-remote
+    (global-set-key
+     (kbd "C-c R")
+     'bar-browse)))
 
 (provide 'init-vc)
 ;;; init-vc.el ends here
