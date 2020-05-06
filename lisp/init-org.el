@@ -67,7 +67,8 @@
 
 
 
-(maybe-require-package 'writeroom-mode)
+(when (maybe-require-package 'writeroom-mode)
+  (define-key global-map (kbd "C-x w") 'writeroom-mode))
 
 (define-minor-mode prose-mode
   "Set up a buffer for prose editing.
