@@ -15,5 +15,11 @@
     (define-key diff-hl-mode-map (kbd "M-C-]") 'diff-hl-next-hunk)
     (define-key diff-hl-mode-map (kbd "M-C-[") 'diff-hl-previous-hunk)))
 
+(when (maybe-require-package 'browse-at-remote)
+  (after-load 'browse-at-remote
+    (global-set-key
+     (kbd "C-c R")
+     'bar-browse)))
+
 (provide 'init-vc)
 ;;; init-vc.el ends here
