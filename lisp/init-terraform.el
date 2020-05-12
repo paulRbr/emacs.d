@@ -3,6 +3,7 @@
 ;;; Code:
 
 ;;; Terraform
+(setq-default terraform-format-on-save-mode-lighter t)
 
 (when (maybe-require-package 'terraform-mode)
   (when (maybe-require-package 'company-terraform)
@@ -10,7 +11,6 @@
       (company-terraform-init)
 
       (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
-
       ;; I find formatters based on "reformatter" to be more reliable
       ;; so I redefine `terraform-format-on-save-mode' here.
       (when (maybe-require-package 'reformatter)
