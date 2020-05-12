@@ -114,3 +114,5 @@
 (setq gnus-face-8 'gnus-face-8)
 (setq gnus-face-9 'font-lock-warning-face)
 (setq gnus-face-10 'shadow)
+
+(setq send-mail-function (quote smtpmail-send-it))

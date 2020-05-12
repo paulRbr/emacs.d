@@ -2,7 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(setq-default dired-dwim-target t)
+(setq-default
+ dired-dwim-target t
+ dired-listing-switches "-lahDG")
 
 ;; Prefer g-prefixed coreutils version of standard utilities when available
 (let ((gls (executable-find "gls")))
