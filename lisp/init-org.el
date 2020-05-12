@@ -54,6 +54,7 @@
       org-fast-tag-selection-single-key 'expert
       org-html-validation-link nil
       org-export-kill-product-buffer-when-displayed t
+      org-use-speed-commands t
       org-tags-column 80)
 
 
@@ -318,6 +319,12 @@ typical word processor."
 (setq org-archive-mark-done nil)
 (setq org-archive-location "%s_archive::* Archive")
 
+
+
+;;; Calendar
+(setq calendar-latitude 48.8286)
+(setq calendar-longitude 2.3648)
+(setq calendar-location-name "Paris, France")
 
 
 
