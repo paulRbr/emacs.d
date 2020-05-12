@@ -11,7 +11,9 @@
 (when (not *is-a-mac*)
   (require-package 'helm-dash)
   (global-set-key (kbd "C-c D") 'helm-dash-at-point)
-  (setq helm-dash-browser-func 'eww))
+  (setq helm-dash-browser-func 'eww)
+  (setq dash-docs-browser-func 'eww))
+
 
 (provide 'init-dash)
 ;;; init-dash.el ends here
