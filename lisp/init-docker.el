@@ -7,7 +7,8 @@
   (fullframe docker-machines tablist-quit)
   (fullframe docker-volumes tablist-quit)
   (fullframe docker-networks tablist-quit)
-  (fullframe docker-containers tablist-quit))
+  (fullframe docker-containers tablist-quit)
+  (define-key global-map (kbd "C-c d") 'docker))
 (maybe-require-package 'dockerfile-mode)
 (maybe-require-package 'docker-compose-mode)
 
