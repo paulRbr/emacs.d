@@ -40,7 +40,10 @@
 
 ;; Extra export format (Slides in Reveal.js format)
 (maybe-require-package 'org-re-reveal)
-(maybe-require-package 'ox-reveal)
+;; (maybe-require-package 'ox-reveal)
+
+(maybe-require-package 'org-id)
+(maybe-require-package 'org-ref)
 
 ;; Extra babel languages
 (maybe-require-package 'ob-mongo)
@@ -334,6 +337,8 @@ typical word processor."
 (with-eval-after-load 'org-agenda
   (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro))
 
+;; http://ergoemacs.org/emacs/emacs_org_babel_literate_programing.html
+(setq org-src-fontify-natively t)
 
 ;; ;; Show iCal calendars in the org agenda
 ;; (when (and *is-a-mac* (require 'org-mac-iCal nil t))
@@ -390,6 +395,7 @@ typical word processor."
   ;; (server-start)
   ;; (add-to-list 'load-path "~/path/to/org/protocol/")
   (require 'org-protocol)
+  ;; (require 'org-tempo)
   )
 
 (provide 'init-org)
