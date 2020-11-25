@@ -6,7 +6,9 @@
   (when (maybe-require-package 'racer)
     (add-hook 'rust-mode-hook #'racer-mode))
   (when (maybe-require-package 'company)
-    (add-hook 'racer-mode-hook #'company-mode)))
+    (add-hook 'racer-mode-hook #'company-mode))
+  (setq rust-format-on-save t)
+  )
 
 (when (maybe-require-package 'flycheck-rust)
   (with-eval-after-load 'rust-mode
