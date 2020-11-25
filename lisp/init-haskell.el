@@ -2,6 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
+;; (when (maybe-require-package 'lsp-mode)
+;;   (maybe-require-package 'lsp)
+;;   (maybe-require-package 'lsp-haskell)
+;;   (add-hook 'haskell-mode-hook #'lsp)
+;;   )
+
+
 (when (maybe-require-package 'haskell-mode)
   (add-hook 'haskell-mode-hook 'subword-mode)
   (add-hook 'haskell-cabal-mode 'subword-mode)
