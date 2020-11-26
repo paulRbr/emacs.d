@@ -57,9 +57,9 @@
 
 
 
-;; Convenient binding for helm-grep-do-git-grep (instead of vc-git-grep)
-(after-load 'helm
-  (define-key vc-prefix-map (kbd "f") 'helm-grep-do-git-grep))
+;; Convenient binding for counsel-git-grep (instead of vc-git-grep)
+(with-eval-after-load 'counsel
+  (define-key vc-prefix-map (kbd "f") 'counsel-git-grep))
 
 
 
