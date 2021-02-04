@@ -27,9 +27,12 @@
                                         (when s (symbol-name s)))))
         (consult-ripgrep dir initial)))
     (global-set-key (kbd "M-?") 'sanityinc/consult-ripgrep-at-point)
-    (global-set-key [remap switch-to-buffer] 'consult-buffer)
-    (global-set-key [remap switch-to-buffer-other-window] 'consult-buffer-other-window)
-    (global-set-key [remap switch-to-buffer-other-frame] 'consult-buffer-other-frame)
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;; Error “Wrong type argument: bufferp” on my setup... ;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;; (global-set-key [remap switch-to-buffer] 'consult-buffer)
+    ;; (global-set-key [remap switch-to-buffer-other-window] 'consult-buffer-other-window)
+    ;; (global-set-key [remap switch-to-buffer-other-frame] 'consult-buffer-other-frame)
     (when (maybe-require-package 'embark-consult)
       (with-eval-after-load 'embark
         (require 'embark-consult)
