@@ -39,7 +39,9 @@
 (define-key global-map (kbd "C-c o") sanityinc/org-global-prefix-map)
 
 ;; Extra export format (Slides in Reveal.js format)
-(maybe-require-package 'org-re-reveal)
+(when (maybe-require-package 'org-re-reveal)
+  (require 'org-re-reveal))
+
 ;; (maybe-require-package 'ox-reveal)
 
 (maybe-require-package 'org-id)
