@@ -56,9 +56,9 @@
     (add-hook 'magit-mode-hook (lambda () (local-unset-key [(meta h)])))))
 
 
-;; Convenient binding for counsel-git-grep (instead of vc-git-grep)
-(with-eval-after-load 'counsel
-  (define-key vc-prefix-map (kbd "f") 'counsel-git-grep))
+;; Convenient binding for consult-git-grep (instead of vc-git-grep)
+(with-eval-after-load 'consult
+  (define-key vc-prefix-map (kbd "f") 'consult-git-grep))
 
 
 
