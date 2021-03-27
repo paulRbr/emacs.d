@@ -3,6 +3,7 @@
 ;;; Code:
 
 (require 'gnus-notify)
+(maybe-require-package 'nnir)
 
 (provide 'init-gnus)
 ;;; init-gnus.el ends here
