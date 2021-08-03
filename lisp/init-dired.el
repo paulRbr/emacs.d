@@ -24,9 +24,10 @@
   (define-key dired-mode-map [mouse-2] 'dired-find-file)
   (define-key dired-mode-map (kbd "C-c C-q") 'wdired-change-to-wdired-mode))
 
-(when (maybe-require-package 'diff-hl)
-  (with-eval-after-load 'dired
-    (add-hook 'dired-mode-hook 'diff-hl-dired-mode)))
+(maybe-require-package 'diff-hl)
+;; (when (maybe-require-package 'diff-hl)
+;;   (with-eval-after-load 'dired
+;;     (add-hook 'dired-mode-hook 'diff-hl-dired-mode)))
 
 (provide 'init-dired)
 ;;; init-dired.el ends here
