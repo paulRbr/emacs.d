@@ -1,7 +1,18 @@
 ;;; init-html.el --- Editing HTML -*- lexical-binding: t -*-
 ;;; Commentary:
 
-;; ERB is configured separately in init-ruby
+;;----------------------------------------------------------------------------
+;; Enable web-mode for HTML templates
+;;----------------------------------------------------------------------------
+(when (maybe-require-package 'web-mode)
+  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode)))
+
 
 ;;; Code:
 
