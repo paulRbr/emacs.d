@@ -49,6 +49,7 @@
 
 ;; Extra babel languages
 (maybe-require-package 'ob-mongo)
+(maybe-require-package 'ob-typescript)
 
 ;; Various preferences
 (setq org-log-done t
