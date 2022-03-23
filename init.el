@@ -71,7 +71,7 @@
 (require 'init-grep)
 (require 'init-uniquify)
 (require 'init-ibuffer)
-(require 'init-flymake)
+(require 'init-flycheck)
 (require 'init-eglot)
 
 (require 'init-recentf)
