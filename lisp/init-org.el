@@ -44,7 +44,11 @@
 
 ;; (maybe-require-package 'ox-reveal)
 
-(maybe-require-package 'org-id)
+(when (maybe-require-package 'org-id)
+  (setq org-id-link-to-org-use-id use-existing)
+
+  ;; Update ID file on startup
+  (org-id-update-id-locations))
 (maybe-require-package 'org-ref)
 
 ;; Extra babel languages
@@ -176,7 +180,7 @@ typical word processor."
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
               (sequence "PROJECT(p)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
-              (sequence "WAITING(w@/!)" "DELEGATED(e!)" "HOLD(h)" "|" "CANCELLED(c@/!)")))
+              (sequence "WAITING(w@/!)" "HOLD(h)" "|" "CANCELLED(c@/!)" "DELEGATED(e!)")))
       org-todo-repeat-to-state "NEXT")
 
 (setq org-todo-keyword-faces
@@ -389,10 +393,11 @@ typical word processor."
       (python . t)
       (ruby . t)
       (screen . nil)
-      (,(if (locate-library "ob-sh") 'sh 'shell) . t)
-      ;; (shell . t)
+      (sh . t) ;; obsolete
+      (shell . t)
       (sql . t)
-      (sqlite . t)))))
+      (sqlite . t))))
+  )
 
 (after-load 'org
   ;; (server-start)
