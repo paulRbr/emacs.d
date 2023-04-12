@@ -103,10 +103,10 @@
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 
-(require-package 'undo-tree)
-(add-hook 'after-init-hook 'global-undo-tree-mode)
-(after-load 'undo-tree
-  (diminish 'undo-tree-mode))
+;; (require-package 'undo-tree)
+;; (add-hook 'after-init-hook 'global-undo-tree-mode)
+;; (after-load 'undo-tree
+;;   (diminish 'undo-tree-mode))
 
 (when (maybe-require-package 'symbol-overlay)
   (dolist (hook '(prog-mode-hook html-mode-hook yaml-mode-hook conf-mode-hook))

@@ -19,6 +19,7 @@
   (after-load 'projectile
     (when (maybe-require-package 'persp-projectile)
 
+      (customize-set-variable 'persp-mode-prefix-key (kbd "C-x x"))
       (persp-mode)
       (require 'persp-projectile)
 
@@ -26,6 +27,7 @@
         (kbd "C-c p p")
         'projectile-persp-switch-project)
       )
+
     ;; )
     ;; (after-load 'projectile
     ;;   (when (maybe-require-package 'persp-mode)
