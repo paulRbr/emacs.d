@@ -11,6 +11,7 @@
 (maybe-require-package 'github-clone)
 (maybe-require-package 'forge)
 (define-key global-map (kbd "C-x p") 'forge-pull)
+(setq ghub-use-workaround-for-emacs-bug 'force)
 (with-eval-after-load 'magit
   (require 'forge)
 
