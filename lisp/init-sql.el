@@ -40,7 +40,9 @@
 
 (require-package 'sqlformat)
 (with-eval-after-load 'sql
-  (define-key sql-mode-map (kbd "C-c C-f") 'sqlformat))
+  (define-key sql-mode-map (kbd "C-c C-f") 'sqlformat)
+  (setq sqlformat-command 'pgformatter)
+  (setq sqlformat-args '("-s2" "-g")))
 
 ;; Package ideas:
 ;;   - PEV
