@@ -84,6 +84,28 @@
   (dolist (hook '(js2-mode-hook js-mode-hook))
     (add-hook hook 'inferior-js-keys-mode)))
 
+
+;; Alternatively, use skewer-mode
+
+(when (maybe-require-package 'skewer-mode)
+  (with-eval-after-load 'skewer-mode
+    (add-hook 'skewer-mode-hook
+              (lambda () (inferior-js-keys-mode -1)))))
+
+
+
+(when (maybe-require-package 'add-node-modules-path)
+  (dolist (mode '(typescript-mode js-mode js2-mode coffee-mode))
+    (add-hook (derived-mode-hook-name mode) 'add-node-modules-path)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; eslint --fix on save ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+(when (maybe-require-package 'eslintd-fix)
+  (setq flycheck-javascript-eslint-executable "eslint_d")
+  (dolist (mode '(typescript-mode js2-mode coffee-mode))
+    (add-hook (derived-mode-hook-name mode) 'eslintd-fix-mode)))
+
 
 (provide 'init-javascript)
 ;;; init-javascript.el ends here
