@@ -10,6 +10,7 @@
                "\\.rjs\\'" "\\.irbrc\\'" "\\.pryrc\\'" "\\.builder\\'"
                "\\.gemspec\\'" "Kirkfile\\'")
 (add-auto-mode 'conf-mode "Gemfile\\.lock\\'")
+(maybe-require-package 'rbs-mode)
 
 (setq-default
  ruby-use-encoding-map nil
@@ -32,6 +33,7 @@
 ;;; Inferior ruby
 (require-package 'inf-ruby)
 (with-eval-after-load 'inf-ruby
+  (add-hook 'after-init-hook 'inf-ruby-switch-setup)
   (defun sanityinc/ruby-load-file (&optional choose-file)
     (interactive "P")
     (if (or choose-file (not buffer-file-name))
