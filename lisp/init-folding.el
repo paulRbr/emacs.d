@@ -8,7 +8,7 @@
     (define-key origami-mode-map (kbd "C-c F") 'origami-toggle-all-nodes)))
 
 (when (maybe-require-package 'yafolding)
-  (after-load 'yafolding
+  (with-eval-after-load 'yafolding
     (global-set-key (kbd "C-c y") 'yafolding-discover)
     (defvar yafolding-mode-map
       (let ((map (make-sparse-keymap)))

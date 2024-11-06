@@ -16,7 +16,7 @@
     (define-key diff-hl-mode-map (kbd "M-C-[") 'diff-hl-previous-hunk)))
 
 (when (maybe-require-package 'browse-at-remote)
-  (after-load 'browse-at-remote
+  (with-eval-after-load 'browse-at-remote
     (global-set-key
      (kbd "C-c R")
      'bar-browse)))

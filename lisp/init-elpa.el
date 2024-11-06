@@ -44,7 +44,7 @@ re-downloaded in order to locate PACKAGE."
             (package-install best)
           (if no-refresh
               (error "No version of %s >= %S is available" package min-version)
-            (package-refresh-contents)
+            ;;(package-refresh-contents)
             (require-package package min-version t)))
         (package-installed-p package min-version))))
 

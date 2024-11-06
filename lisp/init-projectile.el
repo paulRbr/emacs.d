@@ -11,12 +11,11 @@
   (when (executable-find "rg")
     (setq-default projectile-generic-command "rg --files --hidden -0"))
 
-  (with-eval-after-load 'projectile
-    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
-
   (maybe-require-package 'ibuffer-projectile)
 
-  (after-load 'projectile
+  (with-eval-after-load 'projectile
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
     (when (maybe-require-package 'persp-projectile)
 
       (customize-set-variable 'persp-mode-prefix-key (kbd "C-x x"))

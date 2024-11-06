@@ -424,7 +424,7 @@ typical word processor."
   ;;     (sqlite . t))))
   )
 
-(after-load 'org
+(with-eval-after-load 'org
   ;; (server-start)
   ;; (add-to-list 'load-path "~/path/to/org/protocol/")
   (require 'org-protocol)
