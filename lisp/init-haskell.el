@@ -54,7 +54,7 @@
       :program "hindent"
       :lighter " Hin"))
 
-  (after-load 'page-break-lines
+  (with-eval-after-load 'page-break-lines
     (add-to-list 'page-break-lines-modes 'haskell-mode)))
 
 
