@@ -302,5 +302,14 @@ ORIG is the advised function, which is called with its ARGS."
 ;;----------------------------------------------------------------------------
 (maybe-require-package 'string-inflection)
 
+
+;;----------------------------------------------------------------------------
+;; Install editorconfig-emacs
+;;----------------------------------------------------------------------------
+;; (maybe-require-package 'editorconfig)
+;; (with-eval-after-load 'editorconfig
+;;   (editorconfig-mode 1))
+
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
