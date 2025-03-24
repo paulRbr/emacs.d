@@ -101,10 +101,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; eslint --fix on save ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
-(when (maybe-require-package 'eslintd-fix)
-  (setq flycheck-javascript-eslint-executable "eslint_d")
-  (dolist (mode '(typescript-mode js2-mode coffee-mode))
-    (add-hook (derived-mode-hook-name mode) 'eslintd-fix-mode)))
+;; (when (maybe-require-package 'eslintd-fix)
+;;   (setq flycheck-javascript-eslint-executable "eslint_d")
+;;   (dolist (mode '(typescript-mode js2-mode coffee-mode))
+;;     (add-hook (derived-mode-hook-name mode) 'eslintd-fix-mode)))
 
 
 (provide 'init-javascript)
